@@ -1,20 +1,30 @@
 ---
 import TimelineStepper from "./TimelineStepper.astro";
 
+import { work_experiences } from "../../services/workExperiense";
 ---
 
 <div class="px-8 md:px-60 py-28 bg-gray-200">
-  <h2 class=" text-3xl text-center mb-12 border-b-4 border-orange-300 pb-4">
+  <h2 class="text-3xl text-center mb-16 md:mb-24 border-b-4 border-orange-300 pb-4">
     Work experience
-  </h2>  
-  
-  <ol class="relative text-gray-700 border-l border-gray-200 dark:border-orange-400 dark:text-gray-400">  
-    <TimelineStepper 
-      title="Software developer"    
-      bussinesName="Laika Mascotas"
-      dates="sept. 2020 - "
-      description="Development of applications in laravel and vuejs for internal users. Development of stored procedures in mysql. Development of commands for replicas of promotions and different products."
-    />           
-  </ol>
+  </h2>
 
+  <ul
+    class="text-gray-700 dark:text-gray-400"
+  >
+    {
+      work_experiences.map((w) => (
+        <p>
+          <TimelineStepper
+            title={w.title}
+            bussinesName={w.business.name}
+            dates={`${w.dates.start} - ${w.dates.final}`}
+            description={w.description}
+            location={w.business.location}
+            tags={w.tags}
+          />
+        </p>
+      ))
+    }
+  </ul>
 </div>

@@ -1,0 +1,26 @@
+---
+import Button from "../Button.astro";
+import Iam from "./Iam.astro";
+---
+
+<div
+  id="hero"
+  class="flex flex-col mt-40 md:mt-0 min-h-content md:flex-row justify-betweens"
+>
+  <div class="flex flex-col h-48 md:w-3/5 md:my-auto mb-40 gap-y-12">
+    <Iam />
+    <div class="flex justify-center">
+      <Button>
+        Contact me!
+      </Button>
+    </div>
+  </div>
+  <div class="mt-6 md:mt-0 md:w-2/5">
+    <img
+      loading="lazy"
+      src="/images/me03_optimize.jpg"
+      alt=" Miguel Gutierrez image"
+      srcset=""
+    />
+  </div>
+</div>
